@@ -15,20 +15,20 @@ function divide(operand1, operand2) {
 	return operand2 === 0 ? 0 : operand1 / operand2;
 }
 
-function operate(operand1, operand2, operator) {
+function operate(operand1, operator, operand2) {
 	let result;
 	switch (operator) {
 		case "+":
 			result = add(operand1, operand2);
 			break;
 		case "-":
-			result = add(operand1, operand2);
+			result = subtract(operand1, operand2);
 			break;
 		case "*":
-			result = add(operand1, operand2);
+			result = multiply(operand1, operand2);
 			break;
 		case "/":
-			result = add(operand1, operand2);
+			result = divide(operand1, operand2);
 			break;
 		default:
 			return "Enter valid operator";
