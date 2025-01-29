@@ -14,6 +14,9 @@ function multiply(operand1, operand2) {
 function divide(operand1, operand2) {
 	return operand2 === 0 ? 0 : operand1 / operand2;
 }
+function remainder(operand1, operand2) {
+	return operand1 % operand2;
+}
 
 function operate(operand1, operator, operand2) {
 	let result;
@@ -29,6 +32,9 @@ function operate(operand1, operator, operand2) {
 			break;
 		case "/":
 			result = divide(operand1, operand2);
+			break;
+		case "%":
+			result = remainder(operand1, operand2);
 			break;
 		default:
 			return "Enter valid operator";
