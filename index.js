@@ -1,3 +1,5 @@
+let numBtns = document.querySelectorAll(".num");
+let output = document.querySelector(".output");
 let operand1;
 let operand2;
 let operator;
@@ -42,3 +44,22 @@ function operate(operand1, operator, operand2) {
 
 	return result;
 }
+
+let displayValue = "0";
+output.textContent = displayValue;
+
+function display(event) {
+	if (displayValue === "0") {
+		displayValue = event.target.value;
+	} else if (displayValue.length === 14) {
+		displayValue = displayValue;
+	} else {
+		displayValue += event.target.value;
+	}
+
+	output.textContent = displayValue;
+}
+
+numBtns.forEach((numBtn) => {
+	numBtn.addEventListener("click", display);
+});
