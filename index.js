@@ -1,7 +1,3 @@
-// Functionalities to be fixed:
-// 1. Rounding large numbers to specific decimals
-// 2. Ensure multiple decimal points are not entered by the user
-
 let numBtns = document.querySelectorAll(".num");
 let operatorBtns = document.querySelectorAll(".operator");
 let backspaceBtn = document.querySelector(".backspace");
@@ -23,7 +19,7 @@ function multiply(operand1, operand2) {
 	return operand1 * operand2;
 }
 function divide(operand1, operand2) {
-	return operand2 === 0 ? "Nice Try Giga Diddy" : operand1  / operand2;
+	return operand2 === 0 ? "Nice Try Giga Diddy" : operand1 / operand2;
 }
 function remainder(operand1, operand2) {
 	return operand1 % operand2;
@@ -51,7 +47,11 @@ function operate(operand1, operator, operand2) {
 			result = "Invalid";
 	}
 
-	return result;
+
+
+	const resultLength = result.toString().length;
+
+	return resultLength > 12 ? result.toPrecision(6) : result;
 }
 
 function display(event) {
